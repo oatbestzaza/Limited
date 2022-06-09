@@ -19,10 +19,6 @@ def result(res):
 async def main():
     return 'Hello World'
 
-@app.get("/test")
-async def test():
-    return 'Test Tutorial'
-
 @app.get("/add")
 async def add(a: int = 0, b: int = 0):
     return a+b
