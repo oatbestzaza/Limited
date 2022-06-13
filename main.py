@@ -9,6 +9,7 @@ import math
 import requests
 import random
 import string
+import nltk
 from bs4 import BeautifulSoup
 from fastapi.responses import PlainTextResponse
 
