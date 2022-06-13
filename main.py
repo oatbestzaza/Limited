@@ -7,6 +7,8 @@ import numpy as np
 import re
 import math
 import requests
+import random
+import string
 from bs4 import BeautifulSoup
 from fastapi.responses import PlainTextResponse
 
@@ -91,7 +93,7 @@ async def validation_ctzid(text):
     return d13==int(listdata[12])
 
 @app.get("/random_a_z")
- async def random_a_z(number):
+async def random_a_z(number):
     innumber = int(number)
     col = ""   
     for i in range(innumber):

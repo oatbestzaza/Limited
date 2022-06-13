@@ -8,3 +8,5 @@ sklearn
 pandas
 beautifulsoup4
 requests
+string
+random
