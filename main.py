@@ -90,6 +90,14 @@ async def validation_ctzid(text):
         
     return d13==int(listdata[12])
 
+@app.get("/random_a_z")
+ async def random_a_z(int(number)):   
+    for i in range(number):
+        col = ""
+        string.ascii_letters
+        a=random.choice(string.ascii_letters)
+        col = col + a
+
 @app.get("/validation-email")
 async def validation_email(text):  
     regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
