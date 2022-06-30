@@ -3,11 +3,11 @@
 
 from fastapi import FastAPI
 import uvicorn
-import numpy as np
-import re
-import math
-import requests
-from bs4 import BeautifulSoup
+# import numpy as np
+# import re
+# import math
+# import requests
+# from bs4 import BeautifulSoup
 from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
