@@ -8,7 +8,7 @@ import uvicorn
 # import math
 # import requests
 # from bs4 import BeautifulSoup
-# from fastapi.responses import PlainTextResponse
+from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
