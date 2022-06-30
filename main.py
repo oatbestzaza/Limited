@@ -32,65 +32,65 @@ def bigrams(text):
     #ngrams(text,num)
     return sto
 
-# @app.get("/test")
-# async def test():
-#     return 'Test Tutorial'
+@app.get("/test")
+async def test():
+    return 'Test Tutorial'
 
-# @app.get("/add")
-# async def add(a: int = 0, b: int = 0):
-#     return a+b
+@app.get("/add")
+async def add(a: int = 0, b: int = 0):
+    return a+b
 
-# @app.get("/mul")
-# async def mul(a: int = 0, b: int = 0):
-#     return a*b
+@app.get("/mul")
+async def mul(a: int = 0, b: int = 0):
+    return a*b
 
-# @app.get("/pow")
-# async def pow(a: int = 0, b: int = 0):
-#     return math.pow(a,b)
+@app.get("/pow")
+async def pow(a: int = 0, b: int = 0):
+    return math.pow(a,b)
 
 
-# def tonumlist(li):
-#     ls = li.split(',')
-#     for i in range(len(ls)):
-#         ls[i] = float(ls[i])
-#     return list(ls)
+def tonumlist(li):
+    ls = li.split(',')
+    for i in range(len(ls)):
+        ls[i] = float(ls[i])
+    return list(ls)
 
-# @app.get("/asc")
-# async def asc(li):
-#     ls = tonumlist(li)
-#     ls.sort()
-#     return ls
+@app.get("/asc")
+async def asc(li):
+    ls = tonumlist(li)
+    ls.sort()
+    return ls
 
-# @app.get("/desc")
-# async def desc(li):
-#     ls = tonumlist(li)
-#     ls.sort(reverse=True)
-#     return ls
+@app.get("/desc")
+async def desc(li):
+    ls = tonumlist(li)
+    ls.sort(reverse=True)
+    return ls
 
-# @app.get("/sum")
-# async def sum(li):
-#     ls = tonumlist(li)
-#     return np.sum(np.array(ls))
+@app.get("/sum")
+async def sum(li):
+    ls = tonumlist(li)
+    return np.sum(np.array(ls))
 
-# @app.get("/avg")
-# async def avg(li):
-#     ls = tonumlist(li)
-#     return np.average(ls)
+@app.get("/avg")
+async def avg(li):
+    ls = tonumlist(li)
+    return np.average(ls)
 
-# @app.get("/mean")
-# async def mean(li):
-#     ls = tonumlist(li)
-#     return np.mean(ls)
+@app.get("/mean")
+async def mean(li):
+    ls = tonumlist(li)
+    return np.mean(ls)
 
-# @app.get("/max")
-# async def max(li):
-#     ls = tonumlist(li)
-#     return np.amax(ls)
+@app.get("/max")
+async def max(li):
+    ls = tonumlist(li)
+    return np.amax(ls)
 
-# @app.get("/min")
-# async def min(li):
-#     ls = tonumlist(li)
-#     return np.amin(ls)
+@app.get("/min")
+async def min(li):
+    ls = tonumlist(li)
+    return np.amin(ls)
 
 # @app.get("/validation-ctzid")
 # async def validation_ctzid(text):
