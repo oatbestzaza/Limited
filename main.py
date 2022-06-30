@@ -79,61 +79,61 @@ async def min(li):
     ls = tonumlist(li)
     return np.amin(ls)
 
-@app.get("/validation-ctzid")
-async def validation_ctzid(text):
-    if(len(text) != 13):
-        return False
+# @app.get("/validation-ctzid")
+# async def validation_ctzid(text):
+#     if(len(text) != 13):
+#         return False
     
-    sum = 0
-    listdata = list(text)
+#     sum = 0
+#     listdata = list(text)
     
-    for i in range(12):
-        sum+=int(listdata[i])*(13-i)
+#     for i in range(12):
+#         sum+=int(listdata[i])*(13-i)
 
-    d13 = (11-(sum%11))%10
+#     d13 = (11-(sum%11))%10
         
-    return d13==int(listdata[12])
+#     return d13==int(listdata[12])
 
-@app.get("/validation-email")
-async def validation_email(text):  
-    regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
-    if re.search(regex,text):
-        return True
-    else:
-        return False
+# @app.get("/validation-email")
+# async def validation_email(text):  
+#     regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+#     if re.search(regex,text):
+#         return True
+#     else:
+#         return False
     
     
-@app.get("/google-search",response_class=PlainTextResponse)
-def google_search(text):
+# @app.get("/google-search",response_class=PlainTextResponse)
+# def google_search(text):
     
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Accept-Encoding': 'gzip, deflate',
-        'DNT': '1',
-        'Connection': 'keep-alive',
-        'Upgrade-Insecure-Requests': '1'
-    }
-    url = 'https://www.google.com/search?q=' + str(text)
-    res = requests.get(url, headers = headers)
-    soup = BeautifulSoup(res.content, 'html.parser')
+#     headers = {
+#         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0',
+#         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#         'Accept-Language': 'en-US,en;q=0.5',
+#         'Accept-Encoding': 'gzip, deflate',
+#         'DNT': '1',
+#         'Connection': 'keep-alive',
+#         'Upgrade-Insecure-Requests': '1'
+#     }
+#     url = 'https://www.google.com/search?q=' + str(text)
+#     res = requests.get(url, headers = headers)
+#     soup = BeautifulSoup(res.content, 'html.parser')
     
-    t = soup.findAll('div', {'class':"r"})
-    i = 0
-    result = ''
-    for a in t:
-        href = a.a['href']
-        head = a.h3.text
-        result = result + head + '<br>' + href + '<br><br>'
-        i += 1
-        if(i >= 5):
-            break
+#     t = soup.findAll('div', {'class':"r"})
+#     i = 0
+#     result = ''
+#     for a in t:
+#         href = a.a['href']
+#         head = a.h3.text
+#         result = result + head + '<br>' + href + '<br><br>'
+#         i += 1
+#         if(i >= 5):
+#             break
     
-    return(result)
+#     return(result)
 
 
 
 
-if __name__ == '__main__':
-   uvicorn.run(app, host="0.0.0.0", port=80, debug=True) 
+# if __name__ == '__main__':
+#    uvicorn.run(app, host="0.0.0.0", port=80, debug=True) 
