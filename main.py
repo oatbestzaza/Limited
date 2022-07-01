@@ -1,33 +1,11 @@
-#Author: Chatchawal Sangkeettrakarn
-#Date: September 20,2020.
-
 from fastapi import FastAPI
 import uvicorn
-# import numpy as np
-# import re
-# import math
-# import requests
-# from bs4 import BeautifulSoup
 from fastapi.responses import PlainTextResponse
+import fasttext 
+import fasttext.util
 
-app = FastAPI()
 
-def result(res):
-    return {"result":res}
-
-@app.get("/")
-async def main():
-    return 'Hello World'
-
-@app.get("/ngrams")
-def bigrams(text):
-    #text = 'chatchawal 1234'
-    num = 2
-    #print(len(text))
-    sto = []
-    #def ngrams(text,num):
-    for x in range(len(text)-(num-1)):
-        print(x,text[x:x+num])
-        sto.append(text[x:x+num])
-    #ngrams(text,num)
-    return sto
+async def modeloutput(txt):
+    model = fasttext.load_model('r_model_50dgamestatus.bin')
+    return {model.predict(txt, k=5, threshold=0.01)}
+    
