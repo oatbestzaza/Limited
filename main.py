@@ -5,7 +5,8 @@ import fasttext
 import fasttext.util
 
 @app.get("/model")
-async def modeloutput(a):
-    a = a + 2
+async def modeloutput(txt):
+    model = fasttext.load_model('r_model_50dgamestatus.bin')
+    a = model.predict(txt, k=5, threshold=0.01)
     return a
     
