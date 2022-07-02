@@ -2,4 +2,3 @@ fastapi
 gunicorn
 uvicorn
 fasttext
-fasttext.util
