@@ -4,6 +4,7 @@ from fastapi.responses import PlainTextResponse
 import fasttext 
 import fasttext.util
 
+app = FastAPI()
 # @app.get("/model")
 # async def modeloutput(txt):
 #     model = fasttext.load_model('r_model_50dgamestatus.bin')
